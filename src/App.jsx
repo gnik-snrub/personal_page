@@ -1,48 +1,33 @@
 import { useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
+import HeaderSvg from './components/HeaderSvg'
 
 function App() {
+  const [themeType, setThemeType] = useState(light)
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeType}>
       <BG>
-        <H>Lorem Ipsum etc.</H>
-        <ButtonOne>Click me</ButtonOne>
-        <ButtonTwo>Me too!</ButtonTwo>
+        <HeaderSvg mode={themeType.label} />
       </BG>
-      <BGDark>
-        <H>Lorem Ipsum etc.</H>
-        <ButtonOne>Click me</ButtonOne>
-        <ButtonTwo>Me too!</ButtonTwo>
-      </BGDark>
     </ThemeProvider>
   )
 }
 
 const BG = styled.div`
-background: ${props => props.theme.bgLight};
-height: 50vh;
+z-index: 0;
+transition: 0.3s;
+position: relative;
+min-height: 100vh;
+height: 100%;
 width: 100vw;
 display: grid;
-place-items: center;
-& button {
-  font-size: 20px;
-  font-family: arial;
-  color: ${props => props.theme.bgLight}
-}
+grid-template-rows: 33vh auto;
+align-items: center;
+justify-items: center;
+background-color: ${props => props.theme.bg};
 `
 
-const BGDark = styled.div`
-background: ${props => props.theme.bgDark};
-height: 50vh;
-width: 100vw;
-display: grid;
-place-items: center;
-& button {
-  font-size: 20px;
-  font-family: arial;
-  color: ${props => props.theme.bgDark}
-}
 `
 
 const H = styled.h1`
@@ -54,25 +39,22 @@ border-top: 0;
 padding: 15px 40px;
 color: ${props => props.theme.text}
 `
-
-const ButtonOne = styled.button`
-border: none;
-background-color: ${props => props.theme.buttonPrime};
-border-radius: 15px;
-padding: 10px 30px;
 `
 
-const ButtonTwo = styled.button`
-border: none;
-background-color: ${props => props.theme.buttonSecondary};
-border-radius: 15px;
-padding: 10px 30px;
 `
-
-const theme = {
+const light = {
+  label: "light",
   text: "#873582",
-  bgDark: "#2A222A",
-  bgLight: "#E4E7C1",
+  bg: "#E4E7C1",
+  buttonPrime: "#7FB9BD",
+  buttonSecondary: "#557F82",
+  accent: "#873582"
+}
+
+const dark = {
+  label: "dark",
+  text: "#873582",
+  bg: "#2A222A",
   buttonPrime: "#7FB9BD",
   buttonSecondary: "#557F82",
   accent: "#873582"
