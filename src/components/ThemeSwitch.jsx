@@ -20,18 +20,17 @@ const ThemeSwitch = ({ onClick }) => {
 }
 
 const SVG = styled.svg`
-border-radius: 18px;
+border-radius: 50%;
 padding: 3px;
 background-color: ${props => props.theme.bg};
 &:hover {
-  transform: scale(1.1);
-  background-color: ${props => props.theme.buttonPrime};
+  background-color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
+  & * {
+    stroke: ${props => props.theme.bg};
+  }
 }
 & * {
-  stroke: ${props => props.theme.accent};
-}
-&:hover * {
-  stroke: ${props => props.theme.bg};
+  stroke: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
 }
 `
 
