@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
 import HeaderSvg from './components/HeaderSvg'
@@ -6,10 +6,17 @@ import ThemeSwitch from './components/ThemeSwitch'
 
 function App() {
   const [themeType, setThemeType] = useState(light)
+  const about = useRef(null)
+  const projects= useRef(null)
+  const contact = useRef(null)
 
   const changeTheme = () => {
     if (themeType.label === 'dark') setThemeType(light)
     else setThemeType(dark)
+  }
+
+  const toRef = (ref) => {
+    ref.current?.scrollIntoView({behavior: 'smooth'})
   }
 
   return (
@@ -17,18 +24,18 @@ function App() {
       <BG>
         <HeaderSvg mode={themeType.label} />
         <Header>
-          <HeaderButton>About Me</HeaderButton>
-          <HeaderButton>My Projects</HeaderButton>
-          <HeaderButton>Contact Me</HeaderButton>
+          <HeaderButton onClick={() => toRef(about)}>About Me</HeaderButton>
+          <HeaderButton onClick={() => toRef(projects)}>My Projects</HeaderButton>
+          <HeaderButton onClick={() => toRef(contact)}>Contact Me</HeaderButton>
           <ThemeSwitch onClick={changeTheme} />
         </Header>
         <main>
-          <section id="about">
+          <section id="about" ref={about}>
             <h2>About me!</h2>
             <Image src="/public/Headshot.jpg"/>
             <span>Largely true information about me here</span>
           </section>
-          <section id="projects">
+          <section id="projects" ref={projects}>
             <h2>My projects!</h2>
             <article id="pokemon">
               <h3>Pokemon</h3>
@@ -52,7 +59,7 @@ function App() {
               <button>See the repo</button>
             </article>
           </section>
-          <section id="contact">
+          <section id="contact" ref={contact}>
             <h3>Contact me!</h3>
             <span>email here</span>
             <img id="github" />
