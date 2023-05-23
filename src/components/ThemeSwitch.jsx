@@ -23,8 +23,10 @@ const SVG = styled.svg`
 border-radius: 50%;
 padding: 3px;
 background-color: ${props => props.theme.bg};
+filter: drop-shadow(0px 0px 3px ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent});
 &:hover {
   background-color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
+  filter: drop-shadow(0px 0px 0px ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent});
   & * {
     stroke: ${props => props.theme.bg};
   }

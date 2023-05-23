@@ -101,14 +101,15 @@ text-align: center;
 flex: 1 0 22%;
 padding: 10px 0px;
 margin: 0px 80px;
-border: none;
 font-size: 28px;
 color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
 background-color: ${props => props.theme.bg};
+border: none;
+filter: drop-shadow(${props => props.theme.label === "dark" ? "0px 0px 5px" : "5px 5px 0px"} ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent});
 &:hover {
+  filter: drop-shadow(0px 0px 0px ${props => props.theme.buttonPrime});
   color: ${props => props.theme.bg};
   background-color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
-  border-radius: 25px;
 }
 `
 
