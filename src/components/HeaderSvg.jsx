@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types"
 const HeaderSvg = ({ mode }) => {
   return (
     <Svg viewBox='0 0 960 240'>
-      <path fill={mode === "light" ? "#ddc295" : "#3b273b"}>
+      <path fill={mode === "light" ? "#CCE0BD" : "#3b273b"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="32s"
         values="M0 104L20 105.5C40 107 80 110 120
         109.5C160 109 200 105 240 104.8C280 104.7 320 108.3 360 111.8C400 115.3 440
@@ -44,7 +44,7 @@ const HeaderSvg = ({ mode }) => {
 
         "/>
       </path>
-      <path fill={mode === "light" ? "#d89a79" : "#4d2c4c"}>
+      <path fill={mode === "light" ? "#B5D7BB" : "#4d2c4c"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="48s"
         values="M0 116L20 112.8C40 109.7 80 103.3
         120 100.7C160 98 200 99 240 98.8C280 98.7 320 97.3 360 99.3C400 101.3 440
@@ -83,7 +83,7 @@ const HeaderSvg = ({ mode }) => {
 
         "/>
       </path>
-      <path fill={mode === "light" ? "#cd726f" : "#5f305e"}>
+      <path fill={mode === "light" ? "#9FCEBB" : "#5f305e"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="20s"
         values="M0 77L20 77.8C40 78.7 80 80.3 120
         80.7C160 81 200 80 240 81.3C280 82.7 320 86.3 360 84C400 81.7 440 73.3 480
@@ -119,7 +119,7 @@ const HeaderSvg = ({ mode }) => {
 
         "/>
       </path>
-      <path fill={mode === "light" ? "#b44d75" : "#733370"}>
+      <path fill={mode === "light" ? "#8DB4BC" : "#733370"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="28s"
         values="M0 55L20 56.5C40 58 80 61 120
         62.8C160 64.7 200 65.3 240 65C280 64.7 320 63.3 360 60C400 56.7 440 51.3
@@ -156,7 +156,7 @@ const HeaderSvg = ({ mode }) => {
 
         "/>
       </path>
-      <path fill="#873582">
+      <path fill={mode === "light" ? "#7FB9BD" : "#873582"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="40s"
         values="M0 34L20 32.7C40 31.3 80 28.7 120
         28C160 27.3 200 28.7 240 31.2C280 33.7 320 37.3 360 35.8C400 34.3 440 27.7
@@ -201,7 +201,8 @@ const HeaderSvg = ({ mode }) => {
 const Svg = styled.svg`
 position: absolute;
 top: 0;
-left: 0;
+right: 0;
+min-width: 1024px;
 z-index: -1;
 & * {
   filter: drop-shadow(0px 0px 5px black);

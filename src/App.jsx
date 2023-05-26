@@ -102,14 +102,14 @@ flex: 1 0 22%;
 padding: 10px 0px;
 margin: 0px 80px;
 font-size: 28px;
-color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
+color: ${props => props.theme.buttonPrime};
 background-color: ${props => props.theme.bg};
 border: none;
-filter: drop-shadow(${props => props.theme.label === "dark" ? "0px 0px 5px" : "5px 5px 0px"} ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent});
+filter: drop-shadow(0px 0px 5px ${props => props.theme.buttonPrime});
 &:hover {
   filter: drop-shadow(0px 0px 0px ${props => props.theme.buttonPrime});
   color: ${props => props.theme.bg};
-  background-color: ${props => props.theme.label === "dark" ? props.theme.buttonPrime : props.theme.accent};
+  background-color: ${props => props.theme.buttonPrime};
 }
 `
 
@@ -125,14 +125,14 @@ const light = {
   label: "light",
   text: "#873582",
   bg: "#E4E7C1",
-  buttonPrime: "#7FB9BD",
-  buttonSecondary: "#557F82",
-  accent: "#873582"
+  buttonPrime: "#873582",
+  buttonSecondary: "#390040",
+  accent: "#7FB9BD"
 }
 
 const dark = {
   label: "dark",
-  text: "#873582",
+  text: "#7FB9BD",
   bg: "#2A222A",
   buttonPrime: "#7FB9BD",
   buttonSecondary: "#557F82",

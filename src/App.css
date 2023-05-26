@@ -2,5 +2,7 @@
   transition: 0.3s;
 }
 
-body {
+body, html {
+  overflow-x: hidden;
+  width: 100vw;
 }
