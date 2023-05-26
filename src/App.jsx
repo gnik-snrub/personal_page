@@ -32,28 +32,28 @@ function App() {
         <Main>
           <section id="about" ref={about}>
             <h2>About me!</h2>
-            <Image src="/public/Headshot.jpg"/>
             <span>Largely true information about me here</span>
+            <Image src="/Headshot.jpg"/>
           </section>
           <section id="projects" ref={projects}>
             <h2>My projects!</h2>
             <article id="pokemon">
               <h3>Pokemon</h3>
-              <img id="demoGif" src='/public/Pokemon.gif' />
+              <img id="demoGif" src='/Pokemon.gif' />
               <span>Brief explanation</span>
               <button>See it live</button>
               <button>See the repo</button>
             </article>
             <article id="storefront">
               <h3>Indie game storefront</h3>
-              <img id="demoGif" src='/public/Storefront.gif' />
+              <img id="demoGif" src='/Storefront.gif' />
               <span>Brief explanation</span>
               <button>See it live</button>
               <button>See the repo</button>
             </article>
             <article id="weather">
               <h3>Weather app</h3>
-              <img id="demoGif" src='/public/Weather.gif' />
+              <img id="demoGif" src='/Weather.gif' />
               <span>Brief explanation</span>
               <button>See it live</button>
               <button>See the repo</button>
