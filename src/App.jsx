@@ -22,8 +22,8 @@ function App() {
   return (
     <ThemeProvider theme={themeType}>
       <BG>
-        <HeaderSvg mode={themeType.label} />
         <Header>
+          <HeaderSvg mode={themeType.label} />
           <HeaderButton onClick={() => toRef(about)}>About Me</HeaderButton>
           <HeaderButton onClick={() => toRef(projects)}>My Projects</HeaderButton>
           <HeaderButton onClick={() => toRef(contact)}>Contact Me</HeaderButton>
@@ -78,30 +78,29 @@ transition: 0.3s;
 position: relative;
 min-height: 100vh;
 height: 100%;
+min-width: 100vw;
 display: grid;
-grid-template-rows: 33vh auto;
-align-items: center;
+grid-template-rows: auto auto;
 justify-items: center;
 background-color: ${props => props.theme.bg};
 `
 
 const Header = styled.header`
-position: relative;
+position: fixed;
 width: 100%;
 display: flex;
-flex-wrap: wrap;
 align-items: center;
-justify-content: center;
-gap: 30px 0px;
+justify-content: flex-end;
+padding-top: 15px;
+padding-right: 30px;
 `
 
 const HeaderButton = styled.button`
 font-family: arial;
 text-align: center;
-flex: 1 0 22%;
-padding: 10px 0px;
-margin: 0px 80px;
-font-size: 28px;
+padding: 5px 25px;
+margin: 0px 30px;
+font-size: 16px;
 color: ${props => props.theme.buttonPrime};
 background-color: ${props => props.theme.bg};
 border: none;
