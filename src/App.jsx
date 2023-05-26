@@ -29,7 +29,7 @@ function App() {
           <HeaderButton onClick={() => toRef(contact)}>Contact Me</HeaderButton>
           <ThemeSwitch onClick={changeTheme} />
         </Header>
-        <main>
+        <Main>
           <section id="about" ref={about}>
             <h2>About me!</h2>
             <Image src="/public/Headshot.jpg"/>
@@ -66,7 +66,7 @@ function App() {
             <img id="linkedin" />
             <img id="twitter" />
           </section>
-        </main>
+        </Main>
       </BG>
     </ThemeProvider>
   )
@@ -110,6 +110,10 @@ filter: drop-shadow(0px 0px 5px ${props => props.theme.buttonPrime});
   color: ${props => props.theme.bg};
   background-color: ${props => props.theme.buttonPrime};
 }
+`
+
+const Main = styled.main`
+margin-top: 25vh;
 `
 
 const Image = styled.img`
