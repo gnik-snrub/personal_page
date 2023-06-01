@@ -1,3 +1,4 @@
+import styled, {keyframes} from "styled-components"
 const LandingPage = () => {
   return (
         <StyledLanding>
@@ -9,12 +10,21 @@ const LandingPage = () => {
   )
 }
 
+const loadSvg = keyframes`
+  100% {
+    height: 99vh;
+  }
+`
+
 const StyledLanding = styled.div`
 position: relative;
 height: 100vh;
 width: 100vw;
 display: grid;
 z-index: 1;
+animation: ${loadSvg} 0.3s forwards;
+`
+
 const LandingPageGradient = styled.div`
 height: 100%;
 width: 100%;
