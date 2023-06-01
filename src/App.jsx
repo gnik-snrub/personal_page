@@ -5,7 +5,7 @@ import HeaderSvg from './components/HeaderSvg'
 import ThemeSwitch from './components/ThemeSwitch'
 
 function App() {
-  const [themeType, setThemeType] = useState(light)
+  const [themeType, setThemeType] = useState(dark)
   const about = useRef(null)
   const projects= useRef(null)
   const contact = useRef(null)
@@ -30,12 +30,14 @@ function App() {
           <ThemeSwitch onClick={changeTheme} />
         </Header>
         <Main>
-          <section id="about" ref={about}>
-            <h2>About me!</h2>
-            <span>Largely true information about me here</span>
+          <Anchor ref={about}/>
+          <section id="about" >
+            <h2>Hi there, I'm Josiah Morris</h2>
             <Image src="/Headshot.jpg"/>
+            <p>Dedicated to a life of learning, and the opportunities it brings. I am passionate about software development and the limitless possibilities it provides, as well as the challenges and personal growth created through its processes.</p>
           </section>
-          <section id="projects" ref={projects}>
+          <Anchor ref={projects}/>
+          <section id="projects" >
             <h2>My projects!</h2>
             <article id="pokemon">
               <h3>Pokemon</h3>
@@ -59,7 +61,8 @@ function App() {
               <button>See the repo</button>
             </article>
           </section>
-          <section id="contact" ref={contact}>
+          <Anchor ref={contact}/>
+          <section id="contact" >
             <h3>Contact me!</h3>
             <span>email here</span>
             <img id="github" />
@@ -74,13 +77,13 @@ function App() {
 
 const BG = styled.div`
 z-index: 0;
-transition: 0.3s;
+transition: 0.5s;
 position: relative;
 min-height: 100vh;
 height: 100%;
 min-width: 100vw;
 display: grid;
-grid-template-rows: auto auto;
+grid-template-rows: auto;
 justify-items: center;
 background-color: ${props => props.theme.bg};
 `
@@ -112,8 +115,8 @@ filter: drop-shadow(0px 0px 5px ${props => props.theme.buttonPrime});
 }
 `
 
-const Main = styled.main`
-margin-top: 25vh;
+const Anchor = styled.a`
+margin-bottom: 25vh
 `
 
 const Image = styled.img`

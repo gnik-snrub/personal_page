@@ -25,15 +25,15 @@ padding: 3px;
 margin-right: 30px;
 background-color: ${props => props.theme.bg};
 filter: drop-shadow(0px 0px 5px ${props => props.theme.buttonPrime});
+& * {
+  stroke: ${props => props.theme.buttonPrime};
+}
 &:hover {
   background-color: ${props => props.theme.buttonPrime};
   filter: drop-shadow(0px 0px 0px ${props => props.theme.buttonPrime});
   & * {
     stroke: ${props => props.theme.bg};
   }
-}
-& * {
-  stroke: ${props => props.theme.buttonPrime};
 }
 `
 

@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types"
 
 const HeaderSvg = ({ mode }) => {
   return (
-    <Svg viewBox='0 0 960 240'>
+    <Svg viewBox='0 0 960 140'>
       <path fill={mode === "light" ? "#CCE0BD" : "#3b273b"}>
         <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="32s"
         values="M0 104L20 105.5C40 107 80 110 120
@@ -199,11 +199,12 @@ const HeaderSvg = ({ mode }) => {
 }
 
 const Svg = styled.svg`
-position: absolute;
+position: sticky;
+margin-top: -1px;
 top: 0;
 right: 0;
 min-width: 1024px;
-z-index: -1;
+z-index: 0;
 & * {
   filter: drop-shadow(0px 0px 5px black);
 }
