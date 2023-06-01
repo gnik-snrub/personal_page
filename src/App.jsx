@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
-import HeaderSvg from './components/HeaderSvg'
-import ThemeSwitch from './components/ThemeSwitch'
+import Header from './components/Header'
 
 function App() {
   const [themeType, setThemeType] = useState(dark)
@@ -22,13 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={themeType}>
       <BG>
-        <Header>
-          <HeaderSvg mode={themeType.label} />
-          <HeaderButton onClick={() => toRef(about)}>About Me</HeaderButton>
-          <HeaderButton onClick={() => toRef(projects)}>My Projects</HeaderButton>
-          <HeaderButton onClick={() => toRef(contact)}>Contact Me</HeaderButton>
-          <ThemeSwitch onClick={changeTheme} />
-        </Header>
+        <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
           <Anchor ref={about}/>
           <section id="about" >
@@ -88,30 +81,27 @@ justify-items: center;
 background-color: ${props => props.theme.bg};
 `
 
-const Header = styled.header`
-position: fixed;
-width: 100%;
+const Main = styled.main`
 display: flex;
+flex-direction: column;
 align-items: center;
-justify-content: flex-end;
-padding-top: 15px;
-padding-right: 30px;
-`
-
-const HeaderButton = styled.button`
-font-family: arial;
-text-align: center;
-padding: 5px 25px;
-margin: 0px 30px;
-font-size: 16px;
-color: ${props => props.theme.buttonPrime};
-background-color: ${props => props.theme.bg};
-border: none;
-filter: drop-shadow(0px 0px 5px ${props => props.theme.buttonPrime});
-&:hover {
-  filter: drop-shadow(0px 0px 0px ${props => props.theme.buttonPrime});
-  color: ${props => props.theme.bg};
-  background-color: ${props => props.theme.buttonPrime};
+justify-content: center;
+padding-bottom: 25vh;
+& * {
+  color: ${props => props.theme.text};
+  display: grid;
+  place-items: center;
+}
+& > section {
+  font-family: arial;
+  width: 50%;
+  background-color: ${props => props.theme.accent}5f;
+  & button {
+    margin: 5px;
+    border: none;
+    background-color: ${props => props.theme.buttonPrime};
+    color: ${props => props.theme.bg};
+  }
 }
 `
 
