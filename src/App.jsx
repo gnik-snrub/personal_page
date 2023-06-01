@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
 import Header from './components/Header'
+import LandingPage from './components/LandingPage'
 
 function App() {
   const [themeType, setThemeType] = useState(dark)
@@ -21,6 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={themeType}>
       <BG>
+        <LandingPage />
         <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
           <Anchor ref={about}/>
