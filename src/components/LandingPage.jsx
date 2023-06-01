@@ -1,8 +1,20 @@
 import styled, {keyframes} from "styled-components"
+
 const LandingPage = () => {
   return (
         <StyledLanding>
           <LandingPageContent>
+            <LandingMask walls>
+              <LandingPageScroller>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
+              <LandingPageScroller>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
+              <LandingPageScroller>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
+            </LandingMask>
             <LandingMask>
               <LandingPageText>
                 JOSIAH
@@ -12,6 +24,17 @@ const LandingPage = () => {
               <LandingPageText>
                 MORRIS
               </LandingPageText>
+            </LandingMask>
+            <LandingMask walls>
+              <LandingPageScroller rev>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
+              <LandingPageScroller rev>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
+              <LandingPageScroller rev>
+                Full Stack Web Developer - Designer - Self Guided Learner - Lover of Purple - Pokemon Master -
+              </LandingPageScroller>
             </LandingMask>
           </LandingPageContent>
           <LandingPageGradient className='light'/>
@@ -58,6 +81,26 @@ const slideUp = keyframes`
   }
 `
 
+const scroll = keyframes`
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`
+
+const LandingPageScroller = styled.p`
+text-align: center;
+flex: 0 0 auto;
+padding: 10px 0;
+padding-left: 4px;
+font: bold 14px arial;
+margin: 0;
+color: ${props => props.theme.text};
+animation: ${scroll} 18s linear infinite ${props => props.rev ? 'reverse' : ''};
+`
+
 const LandingPageText = styled.h1`
 font: bold italic 134px arial;
 width: 100%;
@@ -78,7 +121,10 @@ transform: translate(-50%, -50%);
 `
 
 const LandingMask = styled.div`
+border-left: ${props => props.walls ? '3px' : 'none'} solid ${props => props.theme.text};
+border-right: ${props => props.walls ? '3px' : 'none'} solid ${props => props.theme.text};
 overflow: hidden;
+display: flex;
 `
 
 export default LandingPage
