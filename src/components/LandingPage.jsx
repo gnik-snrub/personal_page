@@ -3,10 +3,16 @@ const LandingPage = () => {
   return (
         <StyledLanding>
           <LandingPageContent>
+            <LandingMask>
               <LandingPageText>
                 JOSIAH
+              </LandingPageText>
+            </LandingMask>
+            <LandingMask>
+              <LandingPageText>
                 MORRIS
               </LandingPageText>
+            </LandingMask>
           </LandingPageContent>
           <LandingPageGradient className='light'/>
           <LandingPageGradient className='dark'/>
@@ -43,10 +49,22 @@ transition-delay: 0.012s;
 }
 `
 
+const slideUp = keyframes`
+  80% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`
+
 const LandingPageText = styled.h1`
 font: bold italic 134px arial;
 width: 100%;
 text-align: center;
+transform: translateY(100%);
+animation: ${slideUp} 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+animation-delay: ${props => props.delay}s;
 margin: 0;
 color: ${props => props.theme.text};
 `
@@ -57,6 +75,10 @@ position: absolute;
 top: 50vh;
 left: 50vw;
 transform: translate(-50%, -50%);
+`
+
+const LandingMask = styled.div`
+overflow: hidden;
 `
 
 export default LandingPage
