@@ -2,8 +2,12 @@ import styled, {keyframes} from "styled-components"
 const LandingPage = () => {
   return (
         <StyledLanding>
+          <LandingPageContent>
+              <LandingPageText>
                 JOSIAH
                 MORRIS
+              </LandingPageText>
+          </LandingPageContent>
           <LandingPageGradient className='light'/>
           <LandingPageGradient className='dark'/>
         </StyledLanding>
@@ -37,6 +41,22 @@ transition-delay: 0.012s;
 &.light {
   background: linear-gradient(#E4E7C1, #7FB9BD);
 }
+`
+
+const LandingPageText = styled.h1`
+font: bold italic 134px arial;
+width: 100%;
+text-align: center;
+margin: 0;
+color: ${props => props.theme.text};
+`
+
+const LandingPageContent = styled.div`
+z-index: 1;
+position: absolute;
+top: 50vh;
+left: 50vw;
+transform: translate(-50%, -50%);
 `
 
 export default LandingPage
