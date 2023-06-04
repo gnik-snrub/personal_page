@@ -16,12 +16,12 @@ const LandingPage = () => {
               </LandingPageScroller>
             </LandingMask>
             <LandingMask>
-              <LandingPageText>
+              <LandingPageText delay={0}>
                 JOSIAH
               </LandingPageText>
             </LandingMask>
             <LandingMask>
-              <LandingPageText>
+              <LandingPageText delay={0.2}>
                 MORRIS
               </LandingPageText>
             </LandingMask>
@@ -73,9 +73,12 @@ transition-delay: 0.012s;
 `
 
 const slideUp = keyframes`
-  80% {
+  100% {
     transform: translateY(-5%);
   }
+`
+
+const setInPlace = keyframes`
   100% {
     transform: translateY(0);
   }
@@ -106,8 +109,7 @@ font: bold italic 134px arial;
 width: 100%;
 text-align: center;
 transform: translateY(100%);
-animation: ${slideUp} 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-animation-delay: ${props => props.delay}s;
+animation: ${slideUp} 1s ${props => props.delay}s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, ${setInPlace} 0.3s 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 margin: 0;
 color: ${props => props.theme.text};
 `
