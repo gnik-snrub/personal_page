@@ -59,7 +59,7 @@ const HeaderButton = styled.button`
 font-family: arial;
 text-align: center;
 padding: 5px 25px;
-margin: 25px 10px;
+margin: 5px 10px;
 font-size: 16px;
 color: ${props => props.theme.bg};
 background-color: transparent;
@@ -68,17 +68,9 @@ transform: translateY(200%);
 border: 2px solid ${props => props.theme.bg};
 border-radius: 25px;
 animation: ${swingUp} 1s ${props => props.delay}s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, ${setInPlace} 0.3s 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-&:hover {
-  color: ${props => props.theme.buttonPrime};
-  border: 2px solid ${props => props.theme.buttonPrime};
-}
-&:hover:before {
-  filter: drop-shadow(0px 0px 0px ${props => props.theme.buttonPrime});
-  background-color: ${props => props.theme.bg};
-}
-&:before{
+transition-delay: 0.5s;
+&:before {
   content: '';
-  display: block;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -86,10 +78,34 @@ animation: ${swingUp} 1s ${props => props.delay}s cubic-bezier(0.165, 0.84, 0.44
   width: 100%;
   height: 100%;
   transition: 0.5s;
+  transition-delay: 0.5s;
   transform: translateY(-550%);
   animation: ${setInPlace} 1s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: ${props => props.theme.buttonPrime};
+}
+&:hover {
+  color: ${props => props.theme.buttonPrime};
+  border: 2px solid ${props => props.theme.buttonPrime};
+}
+&:hover:before {
+  background-color: ${props => props.theme.bg};
+}
+&:hover:after {
+  transform: scale(1);
+}
+&:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  transform: scale(0);
+  background-color: ${props => props.theme.bg};
+  border-radius: 25px;
 }
 `
 
