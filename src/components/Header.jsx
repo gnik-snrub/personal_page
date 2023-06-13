@@ -27,9 +27,9 @@ const Header = ({ lightSwitch, navFunc, theme, refs }) => {
 const StyledHeader = styled.header`
 position: sticky;
 width: 100%;
-top: 5px;
+top: 13px;
 z-index: 1;
-margin-top: -300px;
+margin-top: -280px;
 margin-right: 50px;
 height: min-content;
 display: flex;

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
+import About from './components/About'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 
@@ -26,11 +27,7 @@ function App() {
         <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
           <Anchor ref={about}/>
-          <section id="about" >
-            <h2>Hi there, I'm Josiah Morris</h2>
-            <Image src="/Headshot.jpg"/>
-            <p>Dedicated to a life of learning, and the opportunities it brings. I am passionate about software development and the limitless possibilities it provides, as well as the challenges and personal growth created through its processes.</p>
-          </section>
+          <About />
           <Anchor ref={projects}/>
           <section id="projects" >
             <h2>My projects!</h2>
@@ -97,7 +94,6 @@ padding-bottom: 25vh;
 & > section {
   font-family: arial;
   width: 50%;
-  background-color: ${props => props.theme.accent}5f;
   & button {
     margin: 5px;
     border: none;
@@ -109,14 +105,6 @@ padding-bottom: 25vh;
 
 const Anchor = styled.a`
 margin-bottom: 25vh
-`
-
-const Image = styled.img`
-border: 5px solid ${props => props.theme.accent};
-border-radius: 50%;
-min-width: 250px;
-max-height: 250px;
-object-fit: cover;
 `
 
 const light = {
