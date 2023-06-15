@@ -28,7 +28,7 @@ const StyledHeader = styled.header`
 position: sticky;
 width: 100%;
 top: 13px;
-z-index: 1;
+z-index: 2;
 margin-top: -280px;
 margin-right: 50px;
 height: min-content;
@@ -63,7 +63,6 @@ margin: 5px 10px;
 font-size: 16px;
 color: ${props => props.theme.bg};
 background-color: transparent;
-border: none;
 transform: translateY(200%);
 border: 2px solid ${props => props.theme.bg};
 border-radius: 25px;

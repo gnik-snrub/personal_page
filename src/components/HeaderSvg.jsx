@@ -204,7 +204,7 @@ margin-top: -1px;
 top: 0;
 right: 0;
 min-width: 1024px;
-z-index: 0;
+z-index: 1;
 & * {
   filter: drop-shadow(0px 0px 5px black);
 }

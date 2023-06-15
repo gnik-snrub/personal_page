@@ -54,7 +54,7 @@ position: relative;
 height: 100vh;
 width: 100vw;
 display: grid;
-z-index: 1;
+z-index: 2;
 animation: ${loadSvg} 0.3s forwards;
 `
 
