@@ -32,25 +32,25 @@ function App() {
           <section id="projects" >
             <h2>My projects!</h2>
             <article id="pokemon">
-              <h3>Pokemon</h3>
               <img id="demoGif" src='/Pokemon.gif' />
-              <span>Brief explanation</span>
-              <button>See it live</button>
-              <button>See the repo</button>
+              <h3>Where's that Pokemon</h3>
+              <span>A Pokemon-themed web app which draws inspiration from 'Where's Wally' and the 'Who's that Pokemon' segment from the classic anime. Built using React, styled-components, a custom hook, while utilizing firebase as a backend to build a scoreboard.</span>
+              <a href='https://gnik-snrub.github.io/where-is-wally' target='_blank' rel='noreferrer noopener'>View it live</a>
+              <a href='https://github.com/gnik-snrub/where-is-wally' target='_blank' rel='noreferrer noopener'>Github repo</a>
             </article>
             <article id="storefront">
-              <h3>Indie game storefront</h3>
               <img id="demoGif" src='/Storefront.gif' />
-              <span>Brief explanation</span>
-              <button>See it live</button>
-              <button>See the repo</button>
+              <h3>Indie Games 'r' Us</h3>
+              <span>A captivating indie-game storefront concept using React and styled-components. Leveraging the power of react-router, I created seamless navigation using paths to showcase a variety of games, demonstrating my ability to create visually appealing interfaces and deliver intuitive user experiences.</span>
+              <a href='https://gnik-snrub.github.io/shopping-cart' target='_blank' rel='noreferrer noopener'>View it live</a>
+              <a href='https://github.com/gnik-snrub/shopping-cart' target='_blank' rel='noreferrer noopener'>Github repo</a>
             </article>
             <article id="weather">
-              <h3>Weather app</h3>
               <img id="demoGif" src='/Weather.gif' />
-              <span>Brief explanation</span>
-              <button>See it live</button>
-              <button>See the repo</button>
+              <h3>Weather app</h3>
+              <span> A sleek and informative weather app drawing from the API from weatherapi.com. Seamlessly displays a variety of local weather conditions, and associated country for any user-queried city from around the world.</span>
+              <a href='https://gnik-snrub.github.io/weather' target='_blank' rel='noreferrer noopener'>View it live</a>
+              <a href='https://github.com/gnik-snrub/weather' target='_blank' rel='noreferrer noopener'>Github repo</a>
             </article>
           </section>
           <Anchor ref={contact}/>
