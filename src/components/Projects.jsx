@@ -3,18 +3,17 @@ import styled from 'styled-components'
 const Projects = () => {
   return (
     <StyledProjects>
-        <h2>My projects!</h2>
-        <article id="pokemon">
+      <article>
         <img id="demoGif" src='/Pokemon.gif' />
         <h3>Where's that Pokemon</h3>
-        <span>A Pokemon-themed web app which draws inspiration from 'Where's
-        Wally' and the 'Who's that Pokemon' segment from the classic anime. Built
+        <span>A Pokemon-themed web app which draws inspiration from "Where's
+        Wally" and the "Who's that Pokemon" segment from the classic anime. Built
         using React, styled-components, a custom hook, while utilizing firebase as
         a backend to build a scoreboard.</span>
         <a href='https://gnik-snrub.github.io/where-is-wally' target='_blank' rel='noreferrer noopener'>View it live</a>
         <a href='https://github.com/gnik-snrub/where-is-wally' target='_blank' rel='noreferrer noopener'>Github repo</a>
       </article>
-      <article id="storefront">
+      <article>
         <img id="demoGif" src='/Storefront.gif' />
         <h3>Indie Games 'r' Us</h3>
         <span>A captivating indie-game storefront concept using React and
@@ -25,7 +24,7 @@ const Projects = () => {
         <a href='https://gnik-snrub.github.io/shopping-cart' target='_blank' rel='noreferrer noopener'>View it live</a>
         <a href='https://github.com/gnik-snrub/shopping-cart' target='_blank' rel='noreferrer noopener'>Github repo</a>
       </article>
-      <article id="weather">
+      <article>
         <img id="demoGif" src='/Weather.gif' />
         <h3>Weather app</h3>
         <span> A sleek and informative weather app drawing from the API from
@@ -40,24 +39,53 @@ const Projects = () => {
 }
 
 const StyledProjects = styled.section`
+width: 90%;
+min-height: 500px;
+max-height: 750px;
+padding-bottom: 3%;
+overflow: hidden;
+position: relative;
 display: flex;
-width: 100%;
-flex-direction: row;
-flex-wrap: wrap;
+flex-flow: row wrap;
 justify-content: center;
-gap: 0 35px;
-& h2 {
+gap: 0 25px;
+&:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(transparent 25%, #873582);
+  transform: ${props => props.theme.label === 'dark' ? 'translateY(0%)' : 'translateY(-101%)'};
+  transition: 0.5s;
+  border-radius: 25px;
+  height: 100%;
   width: 100%;
+}
+&:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(#7FB9BD 25%, transparent);
+  transform: ${props => props.theme.label === 'dark' ? 'translateY(101%)' : 'translateY(0%)'};
+  transition: 0.5s;
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+}
+& h2 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-top: 2%;
 }
 & article {
   position: relative;
   overflow: hidden;
-  border-radius: 25px;
   width: 25%;
-  height: 90%;
+  height: 100%;
   padding: 10px 30px 20px 30px;
   display: grid;
-  grid-template-rows: 50% 10% auto 10%;
+  place-items: center;
+  grid-template-rows: 50% 8% auto 8%;
   grid-template-areas: "preview preview" "heading heading" "description description" "auto auto";
   grid-template-columns: 50% 50%;
   & h3 {
@@ -85,26 +113,6 @@ gap: 0 35px;
     grid-area: preview;
     width: 80%;
   }
-}
-& article:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(transparent 25%, #873582);
-  opacity: ${props => props.theme.label === 'dark' ? '1' : '0'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-}
-& article:after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(transparent 25%, #7FB9BD);
-  opacity: ${props => props.theme.label === 'light' ? '1' : '0'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
 }
 `
 

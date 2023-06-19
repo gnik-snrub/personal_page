@@ -66,8 +66,6 @@ justify-content: center;
 padding-bottom: 25vh;
 & * {
   color: ${props => props.theme.text};
-  display: grid;
-  place-items: center;
 }
 & > section {
   font-family: arial;

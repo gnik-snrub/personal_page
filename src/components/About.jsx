@@ -39,6 +39,7 @@ padding: 50px 70px;
 border-radius: 25px;
 overflow: hidden;
 display: grid;
+place-items: center;
 grid-template-columns: min-content auto;
 grid-template-rows: min-content auto;
 grid-template-areas: "img ." "img ." "img .";

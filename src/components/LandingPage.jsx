@@ -52,7 +52,7 @@ const loadSvg = keyframes`
 const StyledLanding = styled.div`
 position: relative;
 height: 100vh;
-width: 100vw;
+width: 100%;
 display: grid;
 z-index: 2;
 animation: ${loadSvg} 0.3s forwards;
@@ -105,7 +105,10 @@ animation: ${scroll} 18s linear infinite ${props => props.rev ? 'reverse' : ''};
 `
 
 const LandingPageText = styled.h1`
-font: bold italic 134px arial;
+font-family: arial;
+font-size: min(20vw, 134px);
+font-weight: bold;
+font-style: italic;
 width: 100%;
 text-align: center;
 transform: translateY(100%);
