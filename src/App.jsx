@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
 import About from './components/About'
+import Contact from './components/Contact'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 import Projects from './components/Projects'
@@ -28,17 +29,11 @@ function App() {
         <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
           <Anchor ref={about}/>
-          <About />
           <Anchor ref={projects}/>
-          <Projects />
           <Anchor ref={contact}/>
-          <section id="contact" >
-            <h3>Contact me!</h3>
-            <span>email here</span>
-            <img id="github" />
-            <img id="linkedin" />
-            <img id="twitter" />
-          </section>
+          <About/>
+          <Projects/>
+          <Contact/>
         </Main>
       </BG>
     </ThemeProvider>
@@ -63,7 +58,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-padding-bottom: 25vh;
 & * {
   color: ${props => props.theme.text};
 }
