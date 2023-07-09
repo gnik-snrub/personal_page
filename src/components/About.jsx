@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-const About = () => {
+const About = ({ innerRef }) => {
   return (
-    <>
+    <StyledBG ref={innerRef}>
       <StyledAbout>
         <Image src="/Headshot.jpg"/>
         <h2>Hi there, I'm Josiah Morris</h2>
@@ -16,7 +16,7 @@ const About = () => {
             dedication, attention to detail, and a genuine passion for crafting
             engaging user experiences.</p>
       </StyledAbout>
-    </>
+    </StyledBG>
   )
 }
 
@@ -29,27 +29,33 @@ object-fit: cover;
 grid-area: img;
 `
 
-const StyledAbout = styled.section`
+const StyledAbout = styled.div`
 font-family: arial;
 width: 50%;
-max-height: 300px;
-z-index: -1;
-position: relative;
-padding: 50px 70px;
-border-radius: 25px;
-overflow: hidden;
+height: min-content;
 display: grid;
 place-items: center;
 grid-template-columns: min-content auto;
 grid-template-rows: min-content auto;
 grid-template-areas: "img ." "img ." "img .";
 gap: 0px 30px;
+margin-bottom: 10%;
+`
+
+const StyledBG = styled.section`
+width: 100%;
+padding-top: 25vh;
+height: 100%;
+display: grid;
+place-items: center;
+position: relative;
+overflow: hidden;
 &:before {
   content: '';
   position: absolute;
   z-index: -1;
-  background: linear-gradient(transparent 25%, #873582);
-  transform: ${props => props.theme.label === 'dark' ? 'translateY(0%)' : 'translateY(-101%)'};
+  background: linear-gradient(transparent 60%, #873582);
+  transform: ${props => props.theme.label === 'dark' ? 'translateX(0%)' : 'translateX(-101%)'};
   transition: 0.5s;
   height: 100%;
   width: 100%;
@@ -58,8 +64,8 @@ gap: 0px 30px;
   content: '';
   position: absolute;
   z-index: -1;
-  background: linear-gradient(#7FB9BD, transparent 75%);
-  transform: ${props => props.theme.label === 'dark' ? 'translateY(101%)' : 'translateY(0%)'};
+  background: linear-gradient(transparent 60%, #7FB9BD);
+  transform: ${props => props.theme.label === 'dark' ? 'translateX(101%)' : 'translateX(0%)'};
   transition: 0.5s;
   height: 100%;
   width: 100%;

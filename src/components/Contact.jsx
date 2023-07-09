@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-const Contact = () => {
+const Contact = ({ innerRef }) => {
   return (
     <ContactBG>
-      <StyledContact>
+      <StyledContact ref={innerRef}>
         <h3>Contact me!</h3>
         <a href="https://github.com/gnik-snrub"><img id="github" src='/github.svg' /></a>
         <a href="https://linkedin.com/in/josiah-morris-012706a1"><img id="linkedin" src='/linkedin.svg' /></a>

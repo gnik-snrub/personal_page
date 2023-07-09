@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
 import About from './components/About'
@@ -28,17 +28,15 @@ function App() {
         <LandingPage />
         <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
-          <Anchor ref={about}/>
-          <Anchor ref={projects}/>
-          <Anchor ref={contact}/>
-          <About/>
-          <Projects/>
-          <Contact/>
+          <About innerRef={about}/>
+          <Projects innerRef={projects}/>
+          <Contact innerRef={contact}/>
         </Main>
       </BG>
     </ThemeProvider>
   )
 }
+
 
 const BG = styled.div`
 z-index: 0;
@@ -71,11 +69,6 @@ justify-content: center;
   }
 }
 `
-
-const Anchor = styled.a`
-margin-bottom: 25vh
-`
-
 
 const light = {
   label: "light",

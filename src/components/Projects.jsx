@@ -1,62 +1,62 @@
 import styled from 'styled-components'
 
-const Projects = () => {
+const Projects = ({ innerRef }) => {
   return (
-    <StyledProjects>
-      <article>
-        <img id="demoGif" src='/Pokemon.gif' />
-        <h3>Where's that Pokemon</h3>
-        <span>A Pokemon-themed web app which draws inspiration from "Where's
-        Wally" and the "Who's that Pokemon" segment from the classic anime. Built
-        using React, styled-components, a custom hook, while utilizing firebase as
-        a backend to build a scoreboard.</span>
-        <a href='https://gnik-snrub.github.io/where-is-wally' target='_blank' rel='noreferrer noopener'>View it live</a>
-        <a href='https://github.com/gnik-snrub/where-is-wally' target='_blank' rel='noreferrer noopener'>Github repo</a>
-      </article>
-      <article>
-        <img id="demoGif" src='/Storefront.gif' />
-        <h3>Indie Games 'r' Us</h3>
-        <span>A captivating indie-game storefront concept using React and
-        styled-components. Leveraging the power of react-router, I created seamless
-        navigation using paths to showcase a variety of games, demonstrating my
-        ability to create visually appealing interfaces and deliver intuitive user
-        experiences.</span>
-        <a href='https://gnik-snrub.github.io/shopping-cart' target='_blank' rel='noreferrer noopener'>View it live</a>
-        <a href='https://github.com/gnik-snrub/shopping-cart' target='_blank' rel='noreferrer noopener'>Github repo</a>
-      </article>
-      <article>
-        <img id="demoGif" src='/Weather.gif' />
-        <h3>Weather app</h3>
-        <span> A sleek and informative weather app drawing from the API from
-        weatherapi.com. Seamlessly displays a variety of local weather conditions,
-        and associated country for any user-queried city from around the
-        world.</span>
-        <a href='https://gnik-snrub.github.io/weather' target='_blank' rel='noreferrer noopener'>View it live</a>
-        <a href='https://github.com/gnik-snrub/weather' target='_blank' rel='noreferrer noopener'>Github repo</a>
-      </article>
+    <StyledProjects ref={innerRef}>
+      <ProjectsContainer>
+        <article>
+          <img id="demoGif" src='/Pokemon.gif' />
+          <h3>Where's that Pokemon</h3>
+          <span>A Pokemon-themed web app which draws inspiration from "Where's
+          Wally" and the "Who's that Pokemon" segment from the classic anime. Built
+          using React, styled-components, a custom hook, while utilizing firebase as
+          a backend to build a scoreboard.</span>
+          <a href='https://gnik-snrub.github.io/where-is-wally' target='_blank' rel='noreferrer noopener'>View it live</a>
+          <a href='https://github.com/gnik-snrub/where-is-wally' target='_blank' rel='noreferrer noopener'>Github repo</a>
+        </article>
+        <article>
+          <img id="demoGif" src='/Storefront.gif' />
+          <h3>Indie Games 'r' Us</h3>
+          <span>A captivating indie-game storefront concept using React and
+          styled-components. Leveraging the power of react-router, I created seamless
+          navigation using paths to showcase a variety of games, demonstrating my
+          ability to create visually appealing interfaces and deliver intuitive user
+          experiences.</span>
+          <a href='https://gnik-snrub.github.io/shopping-cart' target='_blank' rel='noreferrer noopener'>View it live</a>
+          <a href='https://github.com/gnik-snrub/shopping-cart' target='_blank' rel='noreferrer noopener'>Github repo</a>
+        </article>
+        <article>
+          <img id="demoGif" src='/Weather.gif' />
+          <h3>Weather app</h3>
+          <span> A sleek and informative weather app drawing from the API from
+          weatherapi.com. Seamlessly displays a variety of local weather conditions,
+          and associated country for any user-queried city from around the
+          world.</span>
+          <a href='https://gnik-snrub.github.io/weather' target='_blank' rel='noreferrer noopener'>View it live</a>
+          <a href='https://github.com/gnik-snrub/weather' target='_blank' rel='noreferrer noopener'>Github repo</a>
+        </article>
+      </ProjectsContainer>
     </StyledProjects>
   )
 }
 
 const StyledProjects = styled.section`
-width: 90%;
+width: 100%;
+padding-top: 25vh;
 min-height: 500px;
 max-height: 750px;
+display: grid;
+place-items: center;
 padding-bottom: 3%;
 overflow: hidden;
 position: relative;
-display: flex;
-flex-flow: row wrap;
-justify-content: center;
-gap: 0 25px;
 &:before {
   content: '';
   position: absolute;
   z-index: -1;
-  background: linear-gradient(transparent 25%, #873582);
-  transform: ${props => props.theme.label === 'dark' ? 'translateY(0%)' : 'translateY(-101%)'};
+  background: linear-gradient(#873582, transparent, #873582);
+  transform: ${props => props.theme.label === 'dark' ? 'translateX(0%)' : 'translateX(-101%)'};
   transition: 0.5s;
-  border-radius: 25px;
   height: 100%;
   width: 100%;
 }
@@ -64,19 +64,22 @@ gap: 0 25px;
   content: '';
   position: absolute;
   z-index: -1;
-  background: linear-gradient(#7FB9BD 25%, transparent);
-  transform: ${props => props.theme.label === 'dark' ? 'translateY(101%)' : 'translateY(0%)'};
+  background: linear-gradient(#7FB9BD, transparent, #7FB9BD);
+  transform: ${props => props.theme.label === 'dark' ? 'translateX(101%)' : 'translateX(0%)'};
   transition: 0.5s;
-  border-radius: 25px;
   height: 100%;
   width: 100%;
 }
-& h2 {
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  margin-top: 2%;
+& article {
 }
+`
+
+const ProjectsContainer = styled.div`
+width: 90%;
+height: 100%;
+display: flex;
+justify-content: center;
+gap: 0 25px;
 & article {
   position: relative;
   overflow: hidden;
