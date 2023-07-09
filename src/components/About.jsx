@@ -4,7 +4,7 @@ const About = ({ innerRef }) => {
   return (
     <StyledBG ref={innerRef}>
       <StyledAbout>
-        <Image src="/Headshot.jpg"/>
+        <Image src="Headshot.jpg"/>
         <h2>Hi there, I'm Josiah Morris</h2>
         <p> Embracing the path of a lifelong learner, I've ventured into the
             world of web development as a self-taught enthusiast from Australia.

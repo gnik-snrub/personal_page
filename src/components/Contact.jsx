@@ -5,9 +5,9 @@ const Contact = ({ innerRef }) => {
     <ContactBG>
       <StyledContact ref={innerRef}>
         <h3>Contact me!</h3>
-        <a href="https://github.com/gnik-snrub"><img id="github" src='/github.svg' /></a>
-        <a href="https://linkedin.com/in/josiah-morris-012706a1"><img id="linkedin" src='/linkedin.svg' /></a>
-        <a href="https://twitter.com/goodkingler"><img id="twitter" src='/twitter.svg' /></a>
+        <a href="https://github.com/gnik-snrub"><img id="github" src='github.svg' /></a>
+        <a href="https://linkedin.com/in/josiah-morris-012706a1"><img id="linkedin" src='linkedin.svg' /></a>
+        <a href="https://twitter.com/goodkingler"><img id="twitter" src='twitter.svg' /></a>
       </StyledContact>
     </ContactBG>
   )
