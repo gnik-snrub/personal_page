@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import './App.css'
 import About from './components/About'
+import CenterSvg from './components/CenterSvg'
 import Contact from './components/Contact'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
@@ -28,6 +29,7 @@ function App() {
         <LandingPage />
         <Header lightSwitch={changeTheme} navFunc={toRef} theme={themeType.label} refs={{about, projects, contact}} />
         <Main>
+          <CenterSvg mode={themeType.label}/>
           <About innerRef={about}/>
           <Projects innerRef={projects}/>
           <Contact innerRef={contact}/>
