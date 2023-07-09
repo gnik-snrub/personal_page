@@ -50,28 +50,6 @@ place-items: center;
 padding-bottom: 3%;
 overflow: hidden;
 position: relative;
-&:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(#873582, transparent, #873582);
-  transform: ${props => props.theme.label === 'dark' ? 'translateX(0%)' : 'translateX(-101%)'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-}
-&:after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(#7FB9BD, transparent, #7FB9BD);
-  transform: ${props => props.theme.label === 'dark' ? 'translateX(101%)' : 'translateX(0%)'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-}
-& article {
-}
 `
 
 const ProjectsContainer = styled.div`
@@ -82,13 +60,17 @@ justify-content: center;
 gap: 0 25px;
 & article {
   position: relative;
+  background-color: ${props => props.theme.bg}33;
+  border: 2px solid ${props => props.theme.accent};
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
   overflow: hidden;
   width: 25%;
   height: 100%;
   padding: 10px 30px 20px 30px;
   display: grid;
   place-items: center;
-  grid-template-rows: 50% 8% auto 8%;
+  grid-template-rows: 40% 8% auto 8%;
   grid-template-areas: "preview preview" "heading heading" "description description" "auto auto";
   grid-template-columns: 50% 50%;
   & h3 {
@@ -108,12 +90,14 @@ gap: 0 25px;
     }
   }
   & span {
+    display: grid;
+    place-items: center;
     grid-area: description;
-    margin: 20px 0;
     text-align: center;
   }
   & img {
     grid-area: preview;
+    border-radius: 25px;
     width: 80%;
   }
 }

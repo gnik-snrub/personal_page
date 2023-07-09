@@ -40,36 +40,21 @@ grid-template-rows: min-content auto;
 grid-template-areas: "img ." "img ." "img .";
 gap: 0px 30px;
 margin-bottom: 10%;
+background-color: ${props => props.theme.bg}99;
+border: 2px solid ${props => props.theme.accent};
+border-radius: 15px;
+padding: 10px 30px;
+backdrop-filter: blur(10px);
 `
 
 const StyledBG = styled.section`
 width: 100%;
-padding-top: 25vh;
-height: 100%;
+padding-top: 30vh;
+height: 130%;
 display: grid;
 place-items: center;
 position: relative;
 overflow: hidden;
-&:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(transparent 60%, #873582);
-  transform: ${props => props.theme.label === 'dark' ? 'translateX(0%)' : 'translateX(-101%)'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-}
-&:after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(transparent 60%, #7FB9BD);
-  transform: ${props => props.theme.label === 'dark' ? 'translateX(101%)' : 'translateX(0%)'};
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-}
 `
 
 export default About
